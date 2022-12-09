@@ -1,6 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
+
 export const LoginForm = () => {
   const dispatch = useDispatch();
 
@@ -17,16 +22,48 @@ export const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Email
-        <input type="email" name="email" required />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" required />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <Container component="main" maxWidth="xs">
+  
+      <Box
+        sx={{
+          marginTop: 8,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <form onSubmit={handleSubmit} autoComplete="off">
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+            autoFocus
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+          />
+
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            Log in
+          </Button>
+        </form>
+      </Box>
+    </Container>
   );
 };
