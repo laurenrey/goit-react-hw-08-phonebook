@@ -1,19 +1,19 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-export const NavLink = styled(Link)`
+export const Link = styled(NavLink)`
   text-decoration: none;
-  color: blue;
+  color: #001440;
+
   font-weight: 500;
   font-size: 24px;
   :not(:last-child) {
     margin-right: 32px;
   }
-  :hover {
-    color: grey;
+  :last-child {
+    margin-right: 16px;
   }
-`;
-
-export const Nav = styled.nav`
-  margin: 20px 0;
+  &.active {
+    color: #0000ff;
+  }
 `;

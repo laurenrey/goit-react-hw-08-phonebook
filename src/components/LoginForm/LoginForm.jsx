@@ -1,10 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
-
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
+import { Button, TextField, Box } from '@mui/material';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -22,11 +18,10 @@ export const LoginForm = () => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-  
+    <div>
       <Box
         sx={{
-          marginTop: 8,
+          marginTop: 1,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -64,6 +59,6 @@ export const LoginForm = () => {
           </Button>
         </form>
       </Box>
-    </Container>
+    </div>
   );
 };

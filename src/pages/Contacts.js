@@ -5,7 +5,7 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectLoading } from 'redux/contacts/selectors';
-import Typography from '@mui/material/Typography';
+import { Typography, Container } from '@mui/material';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -16,19 +16,17 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <>
-      <div>
-        <Typography component="h2" variant="h4">
-          Phonebook
-        </Typography>
-      </div>
+    <Container component="main">
+      <Typography component="h2" variant="h4" mt={4}>
+        Phonebook
+      </Typography>
       <ContactForm />
       <div>{isLoading && 'Request in progress...'}</div>
-      <Typography component="h3" variant="h4">
+      <Typography component="h3" variant="h4" mt={4}>
         Contacts
       </Typography>
       <Filter />
       <ContactList />
-    </>
+    </Container>
   );
 }

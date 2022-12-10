@@ -1,4 +1,3 @@
-// import { Label, Input } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter } from 'redux/contacts/selectors';
 
@@ -18,7 +17,7 @@ export const Filter = () => {
       <TextField
         margin="normal"
         id="name"
-        label="Find contacts by name"
+        label="Find contact by name"
         name="name"
         value={filter}
         onChange={onChange}

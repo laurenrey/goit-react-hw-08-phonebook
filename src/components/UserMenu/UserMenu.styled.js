@@ -4,4 +4,5 @@ export const UserMenuContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 16px;
 `;

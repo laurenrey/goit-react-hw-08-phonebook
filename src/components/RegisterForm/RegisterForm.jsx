@@ -1,8 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
-import Container from '@mui/material/Container';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import { Button, Box, TextField } from '@mui/material';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -21,48 +19,57 @@ export const RegisterForm = () => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <form onSubmit={handleSubmit} autoComplete="off">
-        <TextField
-          margin="normal"
-          required
-          fullWidth
-          id="name"
-          label="Username"
-          name="name"
-          autoFocus
-        />
+    <div>
+      <Box
+        sx={{
+          marginTop: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <form onSubmit={handleSubmit} autoComplete="off">
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="name"
+            label="Username"
+            name="name"
+            autoFocus
+          />
 
-        <TextField
-          margin="normal"
-          required
-          fullWidth
-          name="email"
-          label="Email"
-          type="email"
-          id="email"
-        />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="email"
+            label="Email"
+            type="email"
+            id="email"
+          />
 
-        <TextField
-          margin="normal"
-          required
-          fullWidth
-          name="password"
-          label="Password"
-          type="password"
-          id="password"
-          autoComplete="current-password"
-        />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+          />
 
-        <Button
-          type="submit"
-          fullWidth
-          variant="contained"
-          sx={{ mt: 3, mb: 2 }}
-        >
-          Register
-        </Button>
-      </form>
-    </Container>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            Register
+          </Button>
+        </form>
+      </Box>
+    </div>
   );
 };

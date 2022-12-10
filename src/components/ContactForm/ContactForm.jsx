@@ -3,12 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
 import { Toaster, toast } from 'react-hot-toast';
-
-import Button from '@mui/material/Button';
-
-import TextField from '@mui/material/TextField';
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
+import { Button, TextField, Box } from '@mui/material';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -58,10 +53,10 @@ export const ContactForm = () => {
   };
 
   return (
-    <Container component="main">
+    <div>
       <Box
         sx={{
-          marginTop: 8,
+          marginTop: 4,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -95,7 +90,7 @@ export const ContactForm = () => {
             fullWidth
             margin="normal"
           />
-          <Toaster position="top-center" reverseOrder={false} />
+          <Toaster position="top-right" reverseOrder={false} />
 
           <Button
             type="submit"
@@ -107,6 +102,6 @@ export const ContactForm = () => {
           </Button>
         </form>
       </Box>
-    </Container>
+    </div>
   );
 };
