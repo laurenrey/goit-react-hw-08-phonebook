@@ -10,7 +10,7 @@ export const UserMenu = () => {
 
   return (
     <UserMenuContainer>
-      <Typography component="h2" variant="h5">
+      <Typography component="h2" variant="h5" color="#12237D">
         Welcome, {user.email}
       </Typography>
       <Button

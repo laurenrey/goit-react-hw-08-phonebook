@@ -13,4 +13,10 @@ export const ContactItem = styled.li`
   align-items: center;
   padding-bottom: 4px;
   justify-content: space-between;
+  transition-duration: 500ms;
+  :hover {
+    background-color: #e7e6e1;
+  }
+  border-radius: 4px;
+  padding-left: 12px;
 `;

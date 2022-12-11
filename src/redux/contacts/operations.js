@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import toast from 'react-hot-toast';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
@@ -20,6 +21,7 @@ export const addContact = createAsyncThunk(
       const response = await axios.post('/contacts', { name, number });
       return response.data;
     } catch (e) {
+      toast.error('Something went wrong. Please try again.');
       return thunkAPI.rejectWithValue(e.message);
     }
   }

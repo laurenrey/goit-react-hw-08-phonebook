@@ -3,6 +3,7 @@ import { deleteContact } from 'redux/contacts/operations';
 import { selectFilteredContacts } from 'redux/contacts/selectors';
 import { List, ContactItem } from './ContactList.styled';
 import { Button, Typography } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export const ContactList = () => {
   const contacts = useSelector(selectFilteredContacts);
@@ -18,8 +19,8 @@ export const ContactList = () => {
           </Typography>
 
           <Button
-            type="button"
             variant="contained"
+            startIcon={<DeleteIcon />}
             onClick={() => dispatch(deleteContact(id))}
           >
             Delete

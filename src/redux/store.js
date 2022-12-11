@@ -1,4 +1,3 @@
-
 import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
@@ -34,7 +33,7 @@ export const store = configureStore({
       },
     }),
   ],
-  // devTools: process.env.NODE_ENV === 'development',
+  devTools: process.env.NODE_ENV === 'development',
 });
 
 export const persistor = persistStore(store);
