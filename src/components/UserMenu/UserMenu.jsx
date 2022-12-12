@@ -2,26 +2,30 @@ import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 import { Typography, Button } from '@mui/material';
-import { UserMenuContainer } from './UserMenu.styled';
+import { Box } from '@mui/material';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
 
   return (
-    <UserMenuContainer>
-      <Typography component="h2" variant="h5" color="#12237D">
+    <Box
+      sx={{
+        display: 'flex',
+        gap: '30px',
+      }}
+    >
+      <Typography component="p" variant="h6" color="#12237D">
         Welcome, {user.email}
       </Typography>
       <Button
         type="button"
         width="50"
         variant="contained"
-        sx={{ mt: 2, mb: 2, ml: 6 }}
         onClick={() => dispatch(logOut())}
       >
         Logout
       </Button>
-    </UserMenuContainer>
+    </Box>
   );
 };

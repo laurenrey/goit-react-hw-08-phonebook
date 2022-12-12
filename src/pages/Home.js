@@ -11,11 +11,8 @@ function Home() {
         justifyContent: 'center',
       }}
     >
-      <Typography component="h1" variant="h3" mt={20} color="#12237D">
-        Welcome to the Phonebook App{' '}
-        <span role="img" aria-label="Greeting icon">
-          📱
-        </span>
+      <Typography component="h1" variant="h4" mt={20} color="#12237D">
+        Welcome to the phonebook{' '}
       </Typography>
     </Container>
   );

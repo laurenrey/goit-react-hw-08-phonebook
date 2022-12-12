@@ -7,7 +7,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 export const ContactList = () => {
   const contacts = useSelector(selectFilteredContacts);
-
   const dispatch = useDispatch();
 
   return (

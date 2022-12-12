@@ -4,8 +4,8 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-right: 250px;
-  padding-left: 250px;
+  margin: 0 auto;
+  max-width: 500px;
 `;
 
 export const ContactItem = styled.li`
